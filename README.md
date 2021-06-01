@@ -4,7 +4,7 @@
 
 PyTorch LightningはPyTorchの色々と細かい点を隠蔽して、オレオレ実装になりがちな学習ルーチンを標準化してくれます。そのため、コードが比較的読みやすくなるという利点があります。今回、[ここ](https://github.com/PyTorchLightning/pytorch-lightning/blob/master/notebooks/07-cifar10-baseline.ipynb)にPyTorch LightningをCIFAR10に適用するnotebookを見つけましたので、これを元に解説します。実際にGoogle Colabで実行できるようにしてありますので、是非試してください。
 
-##Setup
+## Setup
 
 まずは、結果を保存するためにgoogle driveをマウントし、ディレクトリを作ってそこに移動します。
 
@@ -45,7 +45,7 @@ pytorch_lightningには諸々の乱数シードを一発で設定するメソッ
 pl.seed_everything(7)
 ```
 
-##CIFAR10 Data Module
+## CIFAR10 Data Module
 
 バッチサイズを設定します。元のチュートリアルのバッチサイズは32でしたが、256でも大丈夫そうなので、256にしてみました。もししょぼいGPUを割り当てられたりして、メモリアロケーションエラーになるようでしたら、この数字を小さくしてみてください。
 
@@ -86,7 +86,7 @@ cifar10_dm = CIFAR10DataModule(
 
 実際、独自データを学習させる現場では、このデータモジュールを定義するのが最もオリジナルな部分であることが多いのですが、ここではboltsを利用して端折っています。データモジュールの作成に関しては別記事に譲りたいと思います。
 
-##Resnet
+## Resnet
 
 次に、torchvisionに用意されているresnet18を利用してモデルを作成する関数を定義します。
 
@@ -140,7 +140,7 @@ ResNet(
 
 このように、出来合いのモデルを使う場合、効果を発揮するためには入力の条件に合わせて細かい調整が必要です。ただ、モデルの構造を表示させてみれば意外とわかりやすいので、独自の調整を施して試してみてください。
 
-##Lightning Module
+## Lightning Module
 
 LightningModuleはほぼテンプレートです。損失関数にF.nll_lossを使っていますが、お好みのものに取り替えても大丈夫でしょう。また最適化関数もSGDとOneCycleLRを使っています。この辺りも標準化とは離れて独自性が現れてしまいますね。ただ、損失値のbackward()を呼んだり、modelのeval()を呼んだりなどのpytorch由来の細かい注意をしなくて良いのは大変助かります。
 
@@ -222,7 +222,7 @@ trainer.test(model, datamodule=cifar10_dm)
 
 元々のチュートリアルにも40-50エポックで93-94%と書いてありますので、いい感じで再現されているようです。
 
-##Bounus: Use [Stochastic Weight Averaging](https://arxiv.org/abs/1803.05407) to get a boost on performance
+## Bounus: Use [Stochastic Weight Averaging](https://arxiv.org/abs/1803.05407) to get a boost on performance
 
 SWAは簡単に使えて精度もあがるということなので、使ってみます。以下のように単純にラップするだけで使えます。
 
