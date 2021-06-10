@@ -2,7 +2,7 @@
 
 # PyTorch Lightning CIFAR10 Baseline Tutorial を解説
 
-PyTorch LightningはPyTorchの色々と細かい点を隠蔽して、オレオレ実装になりがちな学習ルーチンを標準化してくれます。そのため、コードが比較的読みやすくなるという利点があります。今回、[ここ](https://github.com/PyTorchLightning/pytorch-lightning/blob/master/notebooks/07-cifar10-baseline.ipynb)にPyTorch LightningをCIFAR10に適用するnotebookを見つけましたので、これを元に解説します。実際にGoogle Colabで実行できるようにしてありますので、是非試してください。
+PyTorch LightningはPyTorchの色々と細かい点を隠蔽して、オレオレ実装になりがちな学習ルーチンを標準化してくれます。そのため、コードが比較的読みやすくなるという利点があります。今回、[ここ](https://github.com/PyTorchLightning/lightning-tutorials/blob/aeae8085b48339e9bd9ab61d81cc0dc8b0d48f9c/.notebooks/starters/cifar10-baseline.ipynb)にPyTorch LightningをCIFAR10に適用するnotebookを見つけましたので、これを元に解説します。実際にGoogle Colabで実行できるようにしてありますので、是非試してください。
 
 ## Setup
 
