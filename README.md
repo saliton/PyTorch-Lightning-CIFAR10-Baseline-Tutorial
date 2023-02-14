@@ -1,4 +1,4 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Soliton-Analytics-Team/PyTorch-Lightning-CIFAR10-Baseline-Tutorial/blob/main/PyTorch_Lightning_CIFAR10チュートリアル解説.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/saliton/PyTorch-Lightning-CIFAR10-Baseline-Tutorial/blob/main/PyTorch_Lightning_CIFAR10チュートリアル解説.ipynb)
 
 # PyTorch Lightning CIFAR10 Baseline Tutorial を解説
 
